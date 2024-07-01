@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dtodo-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dtodo
+  template:
+    metadata:
+      labels:
+        app: dtodo
+    spec:
+      containers:
+        - name: dtodo
+          image: meqdad0/dtodo:0.1.0
