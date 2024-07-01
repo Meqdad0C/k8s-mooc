@@ -4,6 +4,7 @@ GENERATOR = Ninja
 
 TARGET = dlog
 BUILD_DIR = build
+RELEASE_DIR = build-release
 CONFIG = Debug
 
 all: prepare
@@ -14,6 +15,10 @@ prepare:
 
 build:
 	cmake --build $(BUILD_DIR) --config $(CONFIG) --target $(TARGET)
+
+release:
+	cmake -DCMAKE_BUILD_TYPE:STRING=Release -S. -B$(RELEASE_DIR) -G $(GENERATOR)
+	cmake --build $(RELEASE_DIR) --config Release --target $(TARGET)
 
 run:
 	./build/bin/$(TARGET) $(ARGS)

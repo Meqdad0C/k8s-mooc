@@ -9,12 +9,12 @@ file(GLOB_RECURSE SRCS src/mlog/*.cpp)
 include_directories(src/mlog/include)
 
 add_library(mlog ${SRCS})
-target_link_libraries(mlog Boost::uuid Boost::date_time)
+target_link_libraries(mlog Boost::uuid)
 target_compile_options(mlog PRIVATE
 -Wall -Wextra
 -Wpedantic -Wshadow -Wconversion
--D_GLIBCXX_DEBUG
 )
+target_compile_options(mlog PRIVATE $<$<CONFIG:Debug>:-D_GLIBCXX_DEBUG>)
 set_target_properties(mlog PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/_)
 
 add_executable(dlog src/main.cpp)
