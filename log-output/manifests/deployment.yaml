@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dlog-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dlog
+  template:
+    metadata:
+      labels:
+        app: dlog
+    spec:
+      containers:
+        - name: dlog
+          image: meqdad0/dlog:0.1.0
