@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: dtodo
-          image: meqdad0/dtodo:0.1.0
+          image: meqdad0/dtodo:0.3
