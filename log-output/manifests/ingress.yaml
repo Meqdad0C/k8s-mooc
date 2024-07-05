@@ -13,3 +13,10 @@ spec:
             name: dlog-svc
             port:
               number: 2345
+      - path: /pingpong
+        pathType: Prefix
+        backend:
+          service:
+            name: dpingpong-svc
+            port:
+              number: 2345

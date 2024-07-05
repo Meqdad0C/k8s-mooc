@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "todo-app"
+		},
+		{
+			"path": "ping-pong-app"
 		}
 	],
 	"settings": {}
